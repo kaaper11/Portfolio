@@ -55,21 +55,47 @@ import React, {useRef} from "react";
              </div>
 
              <section className="container  flex items-center justify-center grid grid-cols-2 ">
-                 <h2 className="text-7xl font-bold text-gray-500 h-10 text-center">PORTFOLIO</h2>
-                 <div className=" items-center  grid grid-rows-2 ">
-                     <div className=" flex items-end justify-baseline grid grid-cols-[30px_auto] ">
-                         <span className="text-2xl font-bold text-gray-400 transform translate-y-21">APPARTMENT</span>
-                         <div className=" ml-52 transform translate-y-20 flex items-center justify-center bg-blue-100 w-80 h-80 border-8 border-blue-200 rounded-lg">
-                             <img className="transform -translate-6 rounded-lg" src={"./public/photos/appartment.png"} />
-                         </div>
-
+                 <div className="grid grid-rows-2">
+                     <div className="flex items-center justify-center">
+                        <h2 className="text-7xl font-bold text-gray-500 h-10 text-center">PORTFOLIO</h2>
                      </div>
                      <div>
-                     <div className="transform translate-y-20 w-140 text-xl bg-blue-200 flex items-center justify-center h-70 rounded-lg border-8 border-white ">
+                         <div className="flex items-center justify-center">
+                            <span className="text-3xl font-bold text-gray-400 ">APPARTMENT</span>
+                         </div>
+                         <div className="flex items-center justify-center transform translate-y-5">
+                             <div className=" w-140 text-lg bg-blue-200 flex items-center justify-center h-70 rounded-lg border-8 border-white ">
+                                <p className="m-8 text-white">The project assumes the creation of a web application for renting apartments and commercial premises from private individuals. The application allows users to browse available offers using a search engine or by viewing suggested listings. Users can reserve a chosen place for a specific period if it is available, and after their stay, they can rate the property.</p>
+                             </div>
+                         </div>
                      </div>
+
+                 </div>
+                 <div className="grid grid-rows-[auto_0px] ">
+                         <div className="  transform translate-y-20 flex items-center justify-center bg-blue-100 w-140 h-67 border-8 border-blue-200 rounded-lg">
+                             <img className="transform -translate-6 rounded-lg" src={"./public/photos/appartment.png"}  />
+                         </div>
+                     <div className="transform translate-y-30 grid grid-cols-[70px_auto] ">
+                         <div className="transform -translate-y-2">
+                             <img src="./public/photos/arrow.png" />
+                         </div>
+                         <div>
+                             <a href={"/"} className="text-white text-2xl font-bold hover:text-gray-400">READ MORE</a>
+                         </div>
                      </div>
                  </div>
              </section>
+             <div className="flex items-center justify-center grid grid-cols-[20px_20px_20px] mt-12 text-2xl font-bold text-white">
+                 <div className="flex items-center justify-center cursor-pointer hover:text-gray-400 ">
+                     <a >1</a>
+                 </div>
+                 <div className="flex items-center justify-center">
+                     <span>|</span>
+                 </div>
+                 <div className="flex items-center justify-center cursor-pointer hover:text-gray-400">
+                     <a>2</a>
+                 </div>
+             </div>
          </div>
      )
  }
