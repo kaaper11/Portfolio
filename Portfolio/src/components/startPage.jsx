@@ -63,7 +63,7 @@ import React, {useRef, useState} from "react";
 
 
      return (
-         <div className="container  mx-auto bg-blue-100 h-1000 scroll-smooth ">
+         <div className="container  mx-auto bg-blue-100 h-1000  scroll-smooth ">
              <nav className="bg-blue-200">
                  <div className="flex items-center justify-between h-15 text-white text-lg font-sans px-4">
                      <a className="" href="/">LOGO</a>
@@ -76,7 +76,7 @@ import React, {useRef, useState} from "react";
                      </div>
                  </div>
              </nav>
-             <div className="container grid grid-cols-2  text-center mt-13 ">
+             <div className="container grid grid-cols-2   text-center mt-13 ">
                  <div className=" flex items-center justify-center grid grid-rows-[70px_auto_0px_auto] gap-7 ">
                      <span className="text-5xl font-bold text-gray-500 h-10">I'm a </span>
                      <span className="text-7xl  text-white" >FUll STACK DEVELOPER </span>
@@ -172,6 +172,18 @@ import React, {useRef, useState} from "react";
                              </button>
                          </div>
                      </div>
+                 </div>
+             </section>
+
+             <section className="h-180 bg-linear-50 from-blue-300 to-blue-500 rounded-t-[100px] mt-65">
+                 <div className="flex items-center justify-center ">
+                     <span className="mt-10 text-white text-4xl font-bold ">CONTACT</span>
+                 </div>
+                 <div className="grid grid-cols-2 ">
+                        <div className="grid grid-rows-4 flex items-center justify-center  mt-10">
+                            <p className="text-2xl text-white font-bold">MESSAGE ME</p>
+                            <div></div>
+                        </div>
                  </div>
              </section>
 
