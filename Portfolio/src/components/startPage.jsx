@@ -182,7 +182,7 @@ import React, {useRef, useState} from "react";
                  <div className="grid grid-cols-2 ">
                         <div className="grid grid-rows-4 flex items-center justify-center  mt-10">
                             <p className="text-2xl text-white font-bold">MESSAGE ME</p>
-                            <div></div>
+                            <div className="h-20 w-20 bg-white rounded-2xl"></div>
                         </div>
                  </div>
              </section>
