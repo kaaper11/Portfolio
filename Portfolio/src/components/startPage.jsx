@@ -5,6 +5,8 @@ import React, {useRef, useState} from "react";
 
      const scroll = useRef(null);
      const scroll2 = useRef(null);
+     const scroll3 = useRef(null);
+     const scroll4 = useRef(null);
      const [activeProject, setActiveProject] = useState(1);
      const [change, setChange] = useState(false);
      const [count, setCount] = useState(1);
@@ -34,6 +36,12 @@ import React, {useRef, useState} from "react";
      const scrollToPortfolio = () => {
          scroll2.current.scrollIntoView({behavior: "smooth"});
      }
+     const scrollToContact = () => {
+         scroll3.current.scrollIntoView({behavior: "smooth"});
+     }
+     const scrollToTechnologies = () => {
+         scroll4.current.scrollIntoView({behavior: "smooth"});
+     }
      const animations1 = () => {
          setChange(true)
          setTimeout(() => {setActiveProject(1), setChange(false)},400)
@@ -42,16 +50,6 @@ import React, {useRef, useState} from "react";
          setChange(true)
          setTimeout(() => {setActiveProject(2), setChange(false)},400)
      }
-
-     // const coutSettingsRight = () => {
-     //     count === 6 ? setCount(1) :
-     //     setCount(count + 1)
-     // }
-     // const coutSettingsLeft = () => {
-     //     count === 1 ? setCount(6) :
-     //     setCount(count - 1)
-     // }
-
      const left = () => {
          setChange2(true)
          setTimeout(() => {count === 1 ? setCount(6) : setCount(count - 1), setChange2(false)},200)
@@ -63,15 +61,16 @@ import React, {useRef, useState} from "react";
 
 
      return (
-         <div className="container  mx-auto bg-blue-100 h-1000  scroll-smooth ">
+         <div className="container  mx-auto bg-blue-100   scroll-smooth ">
              <nav className="bg-blue-200">
                  <div className="flex items-center justify-between h-15 text-white text-lg font-sans px-4">
                      <a className="" href="/">LOGO</a>
                      <div className="flex items-center gap-40">
                          <button className="cursor-pointer " onClick={scrollToAbout}>ABOUT ME</button>
                          <a className="cursor-pointer " onClick={scrollToPortfolio}>PORTFOLIO</a>
+                         <a className="cursor-pointer " onClick={scrollToTechnologies}>TECHNOLOGIES</a>
                          <div className=" container flex items-center justify-center  h-10 w-25 bg-linear-50 from-blue-300 to-blue-500 rounded-lg hover:border-2  hover:border-white hover:cursor-pointer">
-                            <a className="">CONTACT</a>
+                            <a onClick={scrollToContact} className="">CONTACT</a>
                          </div>
                      </div>
                  </div>
@@ -150,7 +149,7 @@ import React, {useRef, useState} from "react";
                  </div>
              </div>
 
-             <section>
+             <section ref={scroll4}>
                  <div className="container grid grid-cols-2 h-100">
                      <div className="flex justify-center items-center">
                          <h3 className="text-7xl font-bold text-gray-500 h-10 text-center" >TECHNOLOGIES</h3>
@@ -175,15 +174,77 @@ import React, {useRef, useState} from "react";
                  </div>
              </section>
 
-             <section className="h-180 bg-linear-50 from-blue-300 to-blue-500 rounded-t-[100px] mt-65">
+             <section ref={scroll3} className="h-170 bg-linear-50 from-blue-300 to-blue-500 rounded-t-[100px] mt-65">
                  <div className="flex items-center justify-center ">
                      <span className="mt-10 text-white text-4xl font-bold ">CONTACT</span>
                  </div>
                  <div className="grid grid-cols-2 ">
-                        <div className="grid grid-rows-4 flex items-center justify-center  mt-10">
+                        <div className="grid grid-rows-4 flex items-center justify-center  mt-10 gap-3">
                             <p className="text-2xl text-white font-bold">MESSAGE ME</p>
-                            <div className="h-20 w-20 bg-white rounded-2xl"></div>
+                            <div className="grid grid-cols-[100px_247px] flex items-center justify-center  ">
+                                <div className="h-20 w-20 bg-linear-50 from-blue-500 to-blue-200 rounded-2xl flex justify-center items-center ">
+                                    <img  src="./public/photos/github.png"/>
+                                </div>
+                                <div>
+                                    <a className="text-white font-bold text-xl  hover:underline-offset-1 hover:underline" href="https://github.com/kaaper11">@kaaper11</a>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-[100px_247px] flex items-center justify-center  ">
+                                <div className="h-20 w-20 bg-linear-50 from-blue-500 to-blue-200 rounded-2xl flex justify-center items-center ">
+                                    <img  src="./public/photos/mail.png"/>
+                                </div>
+                                <div>
+                                    <a className="text-white font-bold text-lg  hover:underline-offset-1 hover:underline" href="mailto:ajdynakacper@gmail.com">ajdynakacper@gmail.com</a>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-[100px_247px] flex items-center justify-center  ">
+                                <div className="h-20 w-20 bg-linear-50 from-blue-500 to-blue-200 rounded-2xl flex justify-center items-center">
+                                    <img  src="./public/photos/pinezka.png"/>
+                                </div>
+                                <div>
+                                    <a className="text-white font-bold text-lg  hover:underline-offset-1 hover:underline" href="https://www.google.com/maps/place/Polska/@51.8423781,13.8570482,6z/data=!3m1!4b1!4m6!3m5!1s0x47009964a4640bbb:0x97573ca49cc55ea!8m2!3d51.919438!4d19.145136!16zL20vMDVxaHc?authuser=0&entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D">POLAND</a>
+                                </div>
+                            </div>
                         </div>
+                     <div className="flex items-center justify-center  ">
+                         <div className="flex items-center justify-center bg-linear-50 from-blue-500  rounded-xl to-blue-200 mt-10 h-100 w-110 grid grid-rows-4">
+                             <div className="flex items-center justify-center  ">
+                                <input placeholder="NAME"  type={"text"} className="h-15 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
+                             </div>
+                             <div className="flex items-center justify-center mb-15">
+                                 <input placeholder="EMAIL"  type={"text"} className="h-15 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
+                             </div>
+                             <div className="flex items-center justify-center mb-15 ">
+                                 <textarea  placeholder="MESSAGE"  type={"text"} className="h-30 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
+                             </div>
+                             <div className="flex items-center justify-center  ">
+                                 <button className="h-15 w-40 bg-white rounded-xl text-gray-500 font-bold text-xl">
+                                     SEND
+                                 </button>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div className="flex items-center justify-center  ">
+                 <div className="h-px bg-white mt-15 w-270"></div>
+                 </div>
+                 <div className="flex items-center justify-center  ">
+                     <div className="grid grid-cols-3 mt-6 w-360">
+                         <div className={"flex items-center justify-center"}>
+                             <p>LOGO</p>
+                         </div>
+                         <div className={"flex items-center justify-center"}>
+                             <p className="font-light text-gray-100">Kacper Ajdyna 2025</p>
+                         </div>
+                         <div className={"flex items-center justify-center grid grid-cols-[70px_70px]"}>
+                             <a href={"https://www.instagram.com/kaaper_/"} className="h-15 w-15 bg-linear-50 from-blue-500 to-blue-200 rounded-2xl flex justify-center items-center">
+                                 <img  src="./public/photos/instagram.png"/>
+                             </a>
+                             <a href={"https://x.com/kaaper11"} className="h-15 w-15 bg-linear-50 from-blue-500 to-blue-200 rounded-2xl flex justify-center items-center">
+                                 <img  src="./public/photos/x.png"/>
+                             </a>
+                         </div>
+                     </div>
                  </div>
              </section>
 
