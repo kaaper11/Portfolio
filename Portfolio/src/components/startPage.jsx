@@ -1,4 +1,5 @@
 import React, {useRef, useState} from "react";
+import emailjs from "emailjs-com"
 
 
  const StartPage = () => {
@@ -7,6 +8,7 @@ import React, {useRef, useState} from "react";
      const scroll2 = useRef(null);
      const scroll3 = useRef(null);
      const scroll4 = useRef(null);
+     const form = useRef();
      const [activeProject, setActiveProject] = useState(1);
      const [change, setChange] = useState(false);
      const [count, setCount] = useState(1);
@@ -59,6 +61,25 @@ import React, {useRef, useState} from "react";
          setTimeout(() => {count === 6 ? setCount(1) : setCount(count + 1), setChange2(false)},200)
      }
 
+     const sendMail = (e) => {
+         e.preventDefault()
+
+             emailjs.sendForm(
+                 "service_gky5v49",
+                 "template_9737eyj",
+                 form.current,
+                 "8RxKmpL82E0c9XNch"
+             )
+             .then(
+                 () => {
+                     form.current.reset()
+                     alert("Message sent");
+                 },
+                 (error) => {
+                     alert("Errror, message unsend " + error.text)
+                 })
+     }
+
 
      return (
          <div className="container  mx-auto bg-blue-100   scroll-smooth ">
@@ -82,7 +103,7 @@ import React, {useRef, useState} from "react";
                      <span className="ml-125 transform -translate-9">🟦</span>
                      <div className="flex justify-center">
                          <div className=" flex items-center justify-center  h-17 w-70 bg-linear-50 from-blue-300 to-blue-500 rounded-lg hover:border-3  hover:border-white hover:cursor-pointer">
-                             <a className=" text-xl font-bold text-white">PROJECTS</a>
+                             <a className=" text-xl font-bold text-white" onClick={scrollToPortfolio} >PROJECTS</a>
                          </div>
                      </div>
                  </div>
@@ -207,22 +228,24 @@ import React, {useRef, useState} from "react";
                             </div>
                         </div>
                      <div className="flex items-center justify-center  ">
-                         <div className="flex items-center justify-center bg-linear-50 from-blue-500  rounded-xl to-blue-200 mt-10 h-100 w-110 grid grid-rows-4">
-                             <div className="flex items-center justify-center  ">
-                                <input placeholder="NAME"  type={"text"} className="h-15 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
+                         <form ref={form} onSubmit={sendMail}  >
+                             <div className="flex items-center justify-center bg-linear-50 from-blue-500  rounded-xl to-blue-200 mt-10 h-100 w-110 grid grid-rows-4">
+                                     <div className="flex items-center justify-center  ">
+                                        <input placeholder="NAME"  name={"name"} type={"text"} className="h-15 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
+                                     </div>
+                                     <div className="flex items-center justify-center mb-15">
+                                         <input placeholder="EMAIL" name={"email"}  type={"email"} className="h-15 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
+                                     </div>
+                                     <div className="flex items-center justify-center mb-15 ">
+                                         <textarea  placeholder="MESSAGE" name={"message"}  type={"text"} className="h-30 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
+                                     </div>
+                                     <div className="flex items-center justify-center  ">
+                                         <button type={"submit"} className="h-15 w-40 bg-white rounded-xl text-gray-500 font-bold text-xl">
+                                             SEND
+                                         </button>
+                                     </div>
                              </div>
-                             <div className="flex items-center justify-center mb-15">
-                                 <input placeholder="EMAIL"  type={"text"} className="h-15 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
-                             </div>
-                             <div className="flex items-center justify-center mb-15 ">
-                                 <textarea  placeholder="MESSAGE"  type={"text"} className="h-30 w-90 bg-white rounded-xl flex items-center justify-center text-center font-bold text-gray-500 text-xl" />
-                             </div>
-                             <div className="flex items-center justify-center  ">
-                                 <button className="h-15 w-40 bg-white rounded-xl text-gray-500 font-bold text-xl">
-                                     SEND
-                                 </button>
-                             </div>
-                         </div>
+                         </form>
                      </div>
                  </div>
                  <div className="flex items-center justify-center  ">
