@@ -1,5 +1,6 @@
 import React, {useRef, useState} from "react";
 import emailjs from "emailjs-com"
+import {useNavigate} from "react-router-dom";
 
 
  const StartPage = () => {
@@ -13,10 +14,19 @@ import emailjs from "emailjs-com"
      const [change, setChange] = useState(false);
      const [count, setCount] = useState(1);
      const [change2, setChange2] = useState(false);
+     const navigate = useNavigate();
+
+     const toAppArtment = () =>{
+         navigate("/appartment")
+     }
+     const toLPG = () =>{
+         navigate("/lpg")
+     }
+
 
      const projects = [
-         {id: 1, title: "APPARTMENT", description: "The project assumes the creation of a web application for renting apartments and commercial premises from private individuals. The application allows users to browse available offers using a search engine or by viewing suggested listings. Users can reserve a chosen place for a specific period if it is available, and after their stay, they can rate the property.", image: "./public/photos/appartment.png"},
-         {id: 2, title: "LITTLEPRICEGAMES", description: "A web application that uses an external API to search for computer game promotions. It allows users to browse current offers, search for games by name, display details, and redirect users to pages where they can purchase the product.", image: "./public/photos/LPG.png"}
+         {id: 1, title: "APPARTMENT", method: toAppArtment, description: "The project assumes the creation of a web application for renting apartments and commercial premises from private individuals. The application allows users to browse available offers using a search engine or by viewing suggested listings. Users can reserve a chosen place for a specific period if it is available, and after their stay, they can rate the property.", image: "./public/photos/appartment.png"},
+         {id: 2, title: "LITTLEPRICEGAMES", method: toLPG, description: "A web application that uses an external API to search for computer game promotions. It allows users to browse current offers, search for games by name, display details, and redirect users to pages where they can purchase the product.", image: "./public/photos/LPG.png"}
      ]
 
      const technologies = [
@@ -79,6 +89,8 @@ import emailjs from "emailjs-com"
                      alert("Errror, message unsend " + error.text)
                  })
      }
+
+
 
 
      return (
@@ -153,7 +165,7 @@ import emailjs from "emailjs-com"
                              <img src="./public/photos/arrow.png" />
                          </div>
                          <div>
-                             <a href={"/"} className="text-white text-2xl font-bold hover:text-gray-400">READ MORE</a>
+                             <a  className="text-white text-2xl font-bold hover:text-gray-400 " onClick={project.method}>READ MORE</a>
                          </div>
                      </div>
                  </div>
