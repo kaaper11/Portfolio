@@ -97,7 +97,9 @@ import {useNavigate} from "react-router-dom";
          <div className="container  mx-auto bg-blue-100   scroll-smooth ">
              <nav className="bg-blue-200">
                  <div className="flex items-center justify-between h-15 text-white text-lg font-sans px-4">
-                     <a className="" href="/">LOGO</a>
+                     <a href="/">
+                         <img  src={"./public/photos/logo.png"}/>
+                     </a>
                      <div className="flex items-center gap-40">
                          <button className="cursor-pointer " onClick={scrollToAbout}>ABOUT ME</button>
                          <a className="cursor-pointer " onClick={scrollToPortfolio}>PORTFOLIO</a>
@@ -207,7 +209,7 @@ import {useNavigate} from "react-router-dom";
                  </div>
              </section>
 
-             <section ref={scroll3} className="h-170 bg-linear-50 from-blue-300 to-blue-500 rounded-t-[100px] mt-65">
+             <section ref={scroll3} className="h-173 bg-linear-50 from-blue-300 to-blue-500 rounded-t-[100px] mt-65">
                  <div className="flex items-center justify-center ">
                      <span className="mt-10 text-white text-4xl font-bold ">CONTACT</span>
                  </div>
@@ -264,16 +266,16 @@ import {useNavigate} from "react-router-dom";
                  <div className="h-px bg-white mt-15 w-270"></div>
                  </div>
                  <div className="flex items-center justify-center  ">
-                     <div className="grid grid-cols-3 mt-6 w-360">
+                     <div className="grid grid-cols-3  w-360">
                          <div className={"flex items-center justify-center"}>
-                             <p>LOGO</p>
+                             <img  src={"./public/photos/logo2.png"}/>
                          </div>
                          <div className={"flex items-center justify-center"}>
                              <p className="font-light text-gray-100">Kacper Ajdyna 2025</p>
                          </div>
                          <div className={"flex items-center justify-center grid grid-cols-[70px_70px]"}>
                              <a href={"https://www.instagram.com/kaaper_/"} className="h-15 w-15 bg-linear-50 from-blue-500 to-blue-200 rounded-2xl flex justify-center items-center">
-                                 <img  src="./public/photos/instagram.png"/>
+                                 <img   src="./public/photos/instagram.png"/>
                              </a>
                              <a href={"https://x.com/kaaper11"} className="h-15 w-15 bg-linear-50 from-blue-500 to-blue-200 rounded-2xl flex justify-center items-center">
                                  <img  src="./public/photos/x.png"/>
